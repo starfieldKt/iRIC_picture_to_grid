@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GridGeneratorDefinition 
+    name="pictue_to_grid" caption="Pictue to Grid" version="1.0.0" 
+	copyright="Keita Hoshino"
+    release="2023.99.99" 
+    homepage=""
+    executable="pic2grid.py"
+    gridtype="structured2d"
+    >
+	<GridGeneratingCondition>
+		<Tab name="basic_setting" caption="Basic Setting">
+			<!-- 読み込む画像のパス -->
+			<Item name="read_image_name" caption="image File Name">
+				<Definition valueType="filename" default="Select image file" />
+			</Item>
+			<!-- 読み込んだ画像をモザイク加工する際のピクセルサイズ -->
+			<Item name="image_scale_down_rate" caption="Image scale down rate">
+				<Definition valueType="integer" default="1" min="1"/>
+			</Item>
+			<!-- 0～255の色に対応した標高の値 -->
+			<Item name="elevation_for_color_0" caption="elevation value for color 0">
+				<Definition valueType="real" default="0.0" />
+			</Item>
+			<Item name="elevation_for_color_255" caption="elevation value for color 255">
+				<Definition valueType="real" default="255.0" />
+			</Item>
+			<!-- 画像の左下の座標(基準点) -->
+			<Item name="base_point_x" caption="Base point x">
+				<Definition valueType="real" default="0.0" />
+			</Item>
+			<Item name="base_point_y" caption="Base point y">
+				<Definition valueType="real" default="0.0" />
+			</Item>
+			<!-- 1ピクセルの幅 -->
+			<Item name="pix_to_meter" caption="Pixel to meter">
+				<Definition valueType="real" default="1.0" />
+			</Item>
+		</Tab>
+	</GridGeneratingCondition>
+</GridGeneratorDefinition>
