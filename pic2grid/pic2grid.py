@@ -62,9 +62,9 @@ if __name__ == "__main__":
     # 画像を8bitグレースケールで読み込む
     image_8bit_gray = cv2.imread(image_original_name, cv2.IMREAD_GRAYSCALE)
     
-    # モザイク化する場合はモザイク処理を行う
+    # 縮小する場合は縮小処理を行う
     if image_scale_down_rate > 1:
-        image_8bit_gray = make_pixel.mosaic(image_8bit_gray, image_scale_down_rate)
+        image_8bit_gray = make_pixel.down_scale(image_8bit_gray, image_scale_down_rate)
 
     # 画像の高さと幅を取得
     height, width = image_8bit_gray.shape

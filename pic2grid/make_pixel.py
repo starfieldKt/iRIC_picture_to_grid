@@ -43,6 +43,18 @@ def color_reduction(image, i, j, k):
 
     return image_reduction
 
+def down_scale(image, alpha):
+    """
+    画像を縮小する。\n
+    Args:
+        image : 画像のnumpy配列
+        alpha : 縮小率
+    Returns:
+        image_reduction : 縮小した画像のnumpy配列
+    """
+    h, w = image.shape
+    return cv2.resize(image, (int(w / alpha), int(h / alpha)))
+
 
 # モザイク加工
 # 画像を縮小して、拡大することでモザイク加工を行う
@@ -56,7 +68,7 @@ def mosaic(image, alpha):
         image_mosaic : モザイク処理した画像のnumpy配列
     """
 
-    h, w, ch = image.shape
+    h, w = image.shape
 
     # 一度縮小する
     res = cv2.resize(image, (int(w / alpha), int(h / alpha)))
